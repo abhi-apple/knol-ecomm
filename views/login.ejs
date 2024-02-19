@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <form action="/api/users/login" method="POST" class="login-form">
+        <div class="phone-number">
+          <label for="phoneNumber">Phone Number</label>
+          <input name="phoneNumber" type="text" id="phoneNumber" required />
+        </div>
+        <div class="password">
+          <label for="password">Password</label>
+          <input name="password" type="password" id="password" required />
+        </div>
+        <button class="submit-button" type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
