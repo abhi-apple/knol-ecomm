@@ -60,8 +60,10 @@ router.post("/login", async (req, res) => {
       "knolskape",
       { expiresIn: "6h" }
     );
-
-    res.status(200).json({ ok: true, message: "Login successful", token });
+    const userName = user.firstName;
+    res
+      .status(200)
+      .json({ ok: true, message: "Login successful", token, userName });
   } catch (error) {
     console.error("Error logging in:", error);
     res.status(500).json({ ok: false, message: "Internal server error" });
