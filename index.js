@@ -22,6 +22,10 @@ mongoose
   .connect(MONGODB_URI)
   .then(() => {
     console.log("Connected to MongoDB");
+    // Start the server only after successful MongoDB connection
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
@@ -36,7 +40,3 @@ const productRoutes = require("./routes/products");
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
